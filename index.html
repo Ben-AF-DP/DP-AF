@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF-Veröffentlichung</title>
+  <meta name="description" content="Öffentliche Veröffentlichung einer PDF-Datei">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:title" content="PDF-Veröffentlichung">
+  <meta property="og:description" content="Öffentliche Anzeige & Download deiner PDF">
+</head>
+<body>
+  <header class="site-header">
+    <h1>📄 Öffentliche PDF</h1>
+    <p class="subtitle">Hier kannst du deine PDF online anzeigen und zum Download anbieten.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Aktuelles Dokument</h2>
+      <p>
+        <a class="btn" href="files/beispiel.pdf" download>PDF herunterladen</a>
+        <a class="btn outline" href="files/beispiel.pdf" target="_blank" rel="noopener">In neuem Tab öffnen</a>
+      </p>
+      <div class="pdf-embed">
+        <object data="files/beispiel.pdf" type="application/pdf" width="100%" height="100%">
+          <p>Dein Browser kann das PDF nicht einbetten. <a href="files/beispiel.pdf">Hier herunterladen</a>.</p>
+        </object>
+      </div>
+      <p class="hint">Tipp: Ersetze <code>files/beispiel.pdf</code> durch deine Datei, z. B. <code>files/dienstplan.pdf</code>. Der Link oben funktioniert dann automatisch.</p>
+    </section>
+
+    <section class="card">
+      <h3>Mehrere PDFs verlinken (optional)</h3>
+      <ul class="links">
+        <li><a href="files/beispiel.pdf" target="_blank" rel="noopener">Beispiel-PDF anzeigen</a></li>
+        <!-- Weitere PDFs einfach als <li> verlinken, z. B.:
+        <li><a href="files/dienstplan_kw10.pdf" target="_blank">Dienstplan KW10</a></li>
+        -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> PDF-Seite</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
